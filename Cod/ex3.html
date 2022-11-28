@@ -47,18 +47,26 @@
 
 <h2>Illustrations</h2>
 
-<p><img id="largeImg" src="img1-lg.jpg" alt="Large image"/></p>
+<p><img id="largeImg" src="../img/jpg/img1-lg.jpg" alt="Large image"/></p>
 
 <p class="thumbs">
-  <a href="img2-lg.jpg" title="Image 2"><img src="img2-thumb.jpg"/></a>
-  <a href="img3-lg.jpg" title="Image 3"><img src="img3-thumb.jpg"/></a>
-  <a href="img4-lg.jpg" title="Image 4"><img src="img4-thumb.jpg"/></a>
-  <a href="img5-lg.jpg" title="Image 5"><img src="img5-thumb.jpg"/></a>
-  <a href="img6-lg.jpg" title="Image 6"><img src="img6-thumb.jpg"/></a>
+  <a href="../img/jpg/img2-lg.jpg" title="Image 2"><img src="../img/jpg/img2-thumb.jpg"/></a>
+  <a href="../img/jpg/img3-lg.jpg" title="Image 3"><img src="../img/jpg/img3-thumb.jpg"/></a>
+  <a href="../img/jpg/img4-lg.jpg" title="Image 4"><img src="../img/jpg/img4-thumb.jpg"/></a>
+  <a href="../img/jpg/img5-lg.jpg" title="Image 5"><img src="../img/jpg/img5-thumb.jpg"/></a>
+  <a href="../img/jpg/img6-lg.jpg" title="Image 6"><img src="../img/jpg/img6-thumb.jpg"/></a>
 </p>
 
-</body>
-</html>
-
+<script>
+  $(document).ready(function(){
+    $("h2").append('<em></em>')
+      $(".thumbs a").click(function(){
+        var largePath = $(this).attr("href");
+        var largeAlt = $(this).attr("title");
+        $("#largeImg").attr({ src: largePath, alt: largeAlt });
+        $("h2 em").html(" (" + largeAlt + ")"); return false;
+      });
+  });
+</script>
 </body>
 </html>
